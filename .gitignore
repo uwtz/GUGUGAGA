@@ -115,3 +115,4 @@ InitTestScene*.unity*
 
 .vscode/
 .DS_Store
+.vsconfig
