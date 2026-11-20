@@ -19,6 +19,10 @@ public class PartySessionService
         options.WithPlayerName();
         options.WithRelayNetwork();
 
+        if (string.IsNullOrEmpty(AuthenticationService.Instance.PlayerName))
+        {
+            await AuthenticationService.Instance.GetPlayerNameAsync();
+        }
         var session = await MultiplayerService.Instance.CreateSessionAsync(options);
         return session.Code;
     }
